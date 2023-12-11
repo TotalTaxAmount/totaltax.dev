@@ -2,18 +2,22 @@
   --max-width: 1100px;
   --border-radius: 12px;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: rgba(0, 0, 0, 1);
+  --foreground-rgb-dark: rgba(0, 0, 0, 0.658);
 
-  --overlay-color-1: #eb3a43;
-  --overlay-color-2: #9198e5;
+  --background-rgb: rgba(255, 255, 255, 1);
+
+  --overlay-color-1: #2d7feb;
+  --overlay-color-2: #94b7f3;
   --anim-duration: 2s;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
+    --foreground-rgb: rgba(255, 255, 255, 1);
+    --foreground-rgb-dark: rgba(255, 255, 255, 0.774);
+
+    --background-rgb: rgba(0, 0, 0, 0.91);
   }
 }
 

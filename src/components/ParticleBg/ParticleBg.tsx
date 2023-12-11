@@ -2,17 +2,16 @@
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { Engine } from "tsparticles-engine";
-import styles from "../page.module.css";
 
 export default function ParticleBg() {
     async function loadParticles(main: Engine) {
-        await loadFull(main)
+        console.log(main);
+        await loadFull(main);
     }
 
     return (
         <Particles 
         id="tsparticles"
-        className={styles.tsparticles}
         init={loadParticles}
         options={{
             "fullScreen": {
@@ -41,7 +40,7 @@ export default function ParticleBg() {
                     }
                 },
                 "size": {
-                    "value": 4,
+                    "value": 3,
                     "random": false,
                     "anim": {
                         "enable": false,
@@ -119,7 +118,6 @@ export default function ParticleBg() {
                 }
             },
             "retina_detect": true,
-
         }}
         />
     )

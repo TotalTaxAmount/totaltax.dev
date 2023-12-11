@@ -1,0 +1,15 @@
+
+.nav_menu {
+    width: auto;
+    margin: 30px;
+}
+
+.nav_menu a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px 20px;}
+
+.nav_menu a:hover {
+    color: var(--foreground-rgb-dark);
+}
+
