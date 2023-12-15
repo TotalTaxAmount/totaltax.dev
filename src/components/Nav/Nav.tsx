@@ -1,29 +1,31 @@
 import styles from "./Nav.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import DiscordIcon from "../../../public/discord-mark.svg";
+import GitHubIcon from "../../../public/github-mark-white.svg";
 
 export default function Nav() {
 
-    const NAV_LINKS = [
-        {
+    const NAV_LINKS = [{
             path: "/",
-            display: "Home"
-        },
+            display: "Home" },
         {
             path: "/#about",
-            display: "About"
-        },
+            display: "About" },
         {
             path: "/projects",
-            display: "Projects"
-        }
-    ];
+            display: "Projects"}];
+
 
     return (
         <nav className={styles.nav_menu}>
             {NAV_LINKS.map((item, index) => (
-                <b><Link className={styles.nav_item} href={item.path} key={index}>{item.display}</Link></b>
+                <Link className={styles.nav_item} href={item.path} key={index}>{item.display}</Link>
             ))}
+            <div className={styles.socials}>
+                <Link target="_blank" href="https://discordapp.com/users/715258506005053491"> <DiscordIcon fill="#fff"/> </Link>
+                <Link target="_blank" href="https://github.com/TotalTaxAmount"><GitHubIcon fill="#fff"/></Link>
+            </div>
         </nav>
     )
 }

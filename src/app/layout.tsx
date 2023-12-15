@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className={styles.background}>
-            <ParticleBg />
+            <ParticleBg className={styles.particles}/>
             <div className={styles.container}>
               <Nav />
               {children}

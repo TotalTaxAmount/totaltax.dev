@@ -15,9 +15,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: rgba(255, 255, 255, 1);
-    --foreground-rgb-dark: rgba(255, 255, 255, 0.774);
+    --foreground-rgb-dark: rgba(255, 255, 255, 0.63);
 
-    --background-rgb: rgba(0, 0, 0, 0.91);
+    --background-rgb: rgba(0, 0, 0, 0.877);
   }
 }
 
@@ -30,7 +30,7 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {

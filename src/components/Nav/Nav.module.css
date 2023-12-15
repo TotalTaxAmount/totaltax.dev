@@ -2,14 +2,25 @@
 .nav_menu {
     width: auto;
     margin: 30px;
+    position: sticky;
 }
 
 .nav_menu a {
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
     padding: 0px 20px;}
 
 .nav_menu a:hover {
     color: var(--foreground-rgb-dark);
+}
+
+.socials {
+    position: relative;
+    float: right;
+}
+
+.socials img:hover {
+    fill: var(--foreground-rgb-dark) !important;
 }
 

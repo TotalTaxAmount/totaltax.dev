@@ -2,13 +2,20 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
+    overflow: scroll;
 
     background: linear-gradient(-45deg, var(--overlay-color-1), var(--overlay-color-2));
 }
 
 .container {
     z-index: 2;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
 
     background: var(--background-rgb);
     border-radius: 16px;
@@ -19,15 +26,9 @@
     -moz-border-radius: 0px;
     -webkit-border-radius: 20px 20px 0px 0px;
     border-radius: 20px 20px 0px 0px; 
+}
 
-    /*overflow: hidden;*/
-
-    position: fixed;
-    width: 95%;
-    height: 95%;
-    margin: auto;
-
-    bottom: 0;
-    left: 0;
-    right: 0;
+.particles {
+    position: sticky;
+    z-index: -1;
 }

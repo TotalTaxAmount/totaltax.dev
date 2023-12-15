@@ -3,7 +3,7 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { Engine } from "tsparticles-engine";
 
-export default function ParticleBg() {
+export default function ParticleBg(props: any) {
     async function loadParticles(main: Engine) {
         console.log(main);
         await loadFull(main);
@@ -119,6 +119,7 @@ export default function ParticleBg() {
             },
             "retina_detect": true,
         }}
+        {...props}
         />
     )
 }
