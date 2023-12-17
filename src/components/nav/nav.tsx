@@ -1,5 +1,4 @@
-import styles from "./Nav.module.css";
-import Image from "next/image";
+import styles from "./nav.module.css";
 import Link from "next/link";
 import DiscordIcon from "../../../public/discord-mark.svg";
 import GitHubIcon from "../../../public/github-mark-white.svg";

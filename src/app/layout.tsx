@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ParticleBg from '@/components/ParticleBg/ParticleBg'
-import Nav from '@/components/Nav/Nav'
+import ParticleBg from '@/components/particleBG/particleBG'
+import Nav from '@/components/nav/nav'
 import styles from "./layout.module.css";
 
 const inter = Inter({ subsets: ['latin'] })
