@@ -24,7 +24,9 @@ export async function getProjectData(id: string) {
 
     const matterRes = matter(fileContents);
 
-    const remarkRes = await remark().use(html).process(matterRes.content);
+    const remarkRes = await remark()
+        .use(html)
+        .process(matterRes.content);
     const rawHTML = remarkRes.toString();
 
     return {
