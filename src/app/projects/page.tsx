@@ -1,10 +1,8 @@
 import { getAllProjectIds, getProjectData } from "@/lib/projects";
 import styles from "./page.module.css";
 import Image from "next/image";
-// import { useState } from "react";
 
 export default async function Projects() {
-    // const [data, setData] = useState([]);
 
 
     return (

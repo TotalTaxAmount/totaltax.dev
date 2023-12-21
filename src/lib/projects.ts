@@ -1,18 +1,19 @@
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { remark } from "remark";
-import html from 'remark-html';
+import remarkHtml from "remark-html";
+import remarkParse from "remark-parse";
+import { unified } from "unified";
 
 const projectsPath = path.join(process.cwd(), 'public/projects');
 
 export function getAllProjectIds() {
-    const files = readdirSync(projectsPath);
+    const files = readdirSync(projectsPath, { withFileTypes: true});
 
-    return files.map((fName) => {
+    return files.filter(file => file.isFile()).map((file) => {
         return {
             params: {
-                id: fName.replace(/\.md$/, ''),
+                id: file.name.replace(/\.md$/, ''),
             },
         };
     });
@@ -24,8 +25,9 @@ export async function getProjectData(id: string) {
 
     const matterRes = matter(fileContents);
 
-    const remarkRes = await remark()
-        .use(html)
+    const remarkRes = await unified()
+        .use(remarkParse)
+        .use(remarkHtml)
         .process(matterRes.content);
     const rawHTML = remarkRes.toString();
 
