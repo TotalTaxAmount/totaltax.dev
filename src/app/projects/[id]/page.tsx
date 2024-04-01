@@ -18,13 +18,3 @@ export default async function Project({ params }: { params: any}) {
 
     );
 }
-
-export async function getStaticPaths() {
-    const paths = await getAllProjectIds();
-    console.log(paths);
-
-    return {
-        paths,
-        fallback: false,
-    };
-}

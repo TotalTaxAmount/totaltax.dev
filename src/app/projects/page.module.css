@@ -1,0 +1,41 @@
+.container h1 {
+    text-align: center;
+}
+
+.card {
+    text-decoration: none;
+    box-shadow: 0 0 0 2px rgb(0, 0, 0);
+    overflow: hidden;
+    transition: transform .2s;
+    border-radius: 10px;
+    background-color: var(--background-rgb);
+    display: block;
+    transition: transform .2s;
+    max-width: 300px;
+    margin-right: auto;
+    height: 350px;
+}
+
+.card:hover {
+    transform: translateY(-1%) scale(1.01);
+    box-shadow: 0 0 0 2px rgb(0, 0, 0), 0 0 20px 5px #48abe0;
+}
+
+
+/* Grid */
+.column {
+    float: left;
+    width: 25%;
+    padding: 20px 10px;
+}
+
+.row {
+    margin: 0 -5px; 
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
