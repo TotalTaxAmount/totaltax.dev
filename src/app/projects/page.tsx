@@ -1,15 +1,19 @@
 import { getAllProjectIds, getProjectData } from "@/lib/projects";
 import styles from "./page.module.css";
 import Image from "next/image";
+import NoSSR from "@/components/NoSSR";
 
 export default async function Projects() {
+    const projects = getAllProjectIds();
 
+    console.log(projects)
+    console.log(getProjectData("test"))
 
     return (
-        <div className={styles.container}>
+        <NoSSR><div className={styles.container}>
             <ul className={styles.projects}>
-                {/* {projects.map((project, index) => {
-                    const data: any = getProjectData(project.params.id);
+                {projects.map(async (project, index) => {
+                    const data: any = await getProjectData(project.params.id);
                     return (
                         <li key={index} className={styles.project}>
                             <Image 
@@ -20,8 +24,8 @@ export default async function Projects() {
                                 style={{width: "50%", height: "auto"}}
                                 alt={data.image}/>
                         </li>
-                )})} */}
+                )})}
             </ul>
-        </div>
+        </div></NoSSR>
     )
 }
