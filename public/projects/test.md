@@ -1,8 +1,11 @@
 ---
 title: This is a test
-github: https://github.com/TotalTaxAmount
 short: This is a test project to test how the project works and it is a test
-image: /images/innovators.jpg
+image: innovators.jpg
+links: {
+    github: https://github.com/TotalTaxAmount,
+    web: https://google.com
+}
 ---
 
 **Lorem ipsum**

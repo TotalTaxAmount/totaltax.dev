@@ -9,23 +9,20 @@
 }
 
 .container {
+    min-height: calc(100% - 20px); /* 100%width - margin */
+    width: calc(100% - 40px); /* 100%width - 2margin */
     z-index: 2;
+    margin: 20px 20px 0px;
+    overflow: hidden;
     display: inline-block;
-    position: absolute;
-    top: 20px;
-    bottom: 0;
-    left: 20px;
-    right: 20px;
 
     background: var(--background-rgb);
-    border-radius: 16px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
     
     -moz-border-radius: 0px;
     -webkit-border-radius: 20px 20px 0px 0px;
-    border-radius: 20px 20px 0px 0px; 
+    border-radius: 20px; 
 }
 
 .particles {

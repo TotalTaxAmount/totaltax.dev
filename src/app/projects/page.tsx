@@ -9,27 +9,23 @@ export default async function Projects() {
     return (
         <div className={styles.container}>
             <h1>Projects</h1>
-            <NoSSR>
-                <div className={styles.row}>
-                    {projects.map(async (project, index) => {
-                        const data: any = await getProjectData(project.params.id);
-                        return (
-                            <div className={styles.colum}>
-                                <Link href={data.github} target="_blank" className={styles.card}>
-                                    <h2>{data.title}</h2>
-                                    <Image 
-                                        src={`/projects${data.image}`} 
-                                        width={0} 
-                                        height={0} 
-                                        sizes="100vw" 
-                                        style={{width: "50%", height: "auto"}}
-                                        alt={data.image} />
-                                    <p>{data.short}</p>
-                                </Link>
-                            </div>
-                    )})}
-                </div>
-            </NoSSR>
+            <NoSSR><ul className={styles.cards}>
+                {projects.map(async (project, index) => {
+                    const data: any = await getProjectData(project.params.id);
+                    return (
+                        <Link href={`/projects/${project.params.id}`} className={styles.card} key={index}>
+                            <h2>{data.title}</h2>
+                            <Image 
+                                src={`/projects/images/${data.image}`} 
+                                width={0} 
+                                height={0} 
+                                sizes="100vw" 
+                                style={{width: "100%", height: "auto"}}
+                                alt={data.image} />
+                            <p>{data.short}</p>
+                        </Link>
+                )})}
+            </ul></NoSSR>
         </div>
     )
 }

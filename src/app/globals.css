@@ -6,6 +6,7 @@
   --foreground-rgb-dark: rgba(0, 0, 0, 0.658);
 
   --background-rgb: rgba(255, 255, 255, 1);
+  --alt-background-rgb: rgb(243, 222, 222);
   --code-bg-rgb: rgba(36, 36, 36);
 
   --overlay-color-1: #2d7feb;
@@ -19,6 +20,7 @@
     --foreground-rgb-dark: rgba(255, 255, 255, 0.63);
 
     --background-rgb: rgba(0, 0, 0, 0.877);
+    --alt-background-rgb: rgba(255, 255, 255, 0.644);
   }
 }
 
