@@ -30,7 +30,6 @@ export async function getProjectData(id: string) {
         .use(remarkHtml)
         .process(matterRes.content);
     const rawHTML = remarkRes.toString();
-
     return {
         id,
         rawHTML,

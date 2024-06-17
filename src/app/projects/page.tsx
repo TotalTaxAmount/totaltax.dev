@@ -19,12 +19,12 @@ export default async function Projects() {
                         <Link href={`/projects/${project.params.id}`} className={styles.card} key={index}>
                             <h2>{data.title}</h2>
                             <Image 
-                                src={`/projects/images/${data.image}`} 
+                                src={`/projects/images/${data.thumbnail}`} 
                                 width={0} 
                                 height={0} 
                                 sizes="100vw" 
                                 style={{width: "100%", height: "auto"}}
-                                alt={data.image} />
+                                alt={data.thumbnail} />
                             <p dangerouslySetInnerHTML={{ __html: previewHTML }} />
                         </Link>
                 )})}
