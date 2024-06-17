@@ -9,11 +9,12 @@
 }
 
 .container {
-    min-height: calc(100% - 20px); /* 100%width - margin */
+     min-height: calc(100% - 20px); /* 100%width - margin */
     width: calc(100% - 40px); /* 100%width - 2margin */
     z-index: 2;
     margin: 20px 20px 0px;
-    overflow: hidden;
+    padding: 0;
+    overflow: scroll;
     display: inline-block;
 
     background: var(--background-rgb);
