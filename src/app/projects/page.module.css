@@ -30,16 +30,10 @@
     background-color: var(--background-rgba);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    /* border-color: var(--foreground-rgb-dark); */
-}
-
-
 .card h2 {
     color: rgb(255, 255, 255);
     max-width: 200px;
-    z-index: 99;
+    z-index: 3;
     font-size: 2em;
     position: absolute;
     top: calc(233.333px/2 - 2em/2);
@@ -50,9 +44,14 @@
 
 .card img {
     max-width: 350px;
-    filter: brightness(70%);
+    filter: brightness(60%);
 }
 
 .card p {
     padding: 0px 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* border-color: var(--foreground-rgb-dark); */
 }

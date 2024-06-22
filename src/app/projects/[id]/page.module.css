@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .container {
     margin: auto;
 }
@@ -42,7 +44,38 @@
 }
 
 .content {
+    font-family: "Lato", sans-serif;
     padding: 10px 50px 50px 50px;
-    max-width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    font-size: 1.25rem;
+    line-height: 1.875rem;
     /* text-align: left; */
+}
+
+.content a {
+  color: rgb(74, 74, 250);
+  text-decoration: underline;
+}
+
+.content em {
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  transform: translateY(-20px);
+}
+
+.content img {
+  max-width: 1000px;
+}
+
+.content p {
+  text-indent: 2em;
+}
+
+.content h2 {
+  margin: 1.25rem 0px;
 }
