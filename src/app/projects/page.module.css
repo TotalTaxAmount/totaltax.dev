@@ -8,7 +8,7 @@
 
 .cards {
     list-style: none;
-    margin: 0 20px;
+    margin: 30px 20px;
     text-align: center;
 }
 
@@ -45,13 +45,15 @@
 .card img {
     max-width: 350px;
     filter: brightness(60%);
+    overflow: hidden;
+    max-height: 196px;
+    object-fit: cover;
 }
 
 .card p {
-    padding: 5px 15px;
+  margin: 10px 10px 0px;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  /* border-color: var(--foreground-rgb-dark); */
 }

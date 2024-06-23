@@ -1,8 +1,13 @@
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
 import path from "path";
+import rehypeDocument from "rehype-document";
+import rehypeFormat from "rehype-format";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
 import remarkHtml from "remark-html";
 import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
 const projectsPath = path.join(process.cwd(), 'public/projects');
@@ -27,7 +32,11 @@ export async function getProjectData(id: string) {
 
     const remarkRes = await unified()
         .use(remarkParse)
-        .use(remarkHtml)
+        .use(remarkRehype, {allowDangerousHtml: true})
+        .use(rehypeRaw)
+        .use(rehypeDocument)
+        .use(rehypeFormat)
+        .use(rehypeStringify)
         .process(matterRes.content);
     const rawHTML = remarkRes.toString();
     return {

@@ -14,7 +14,7 @@ export default async function Projects() {
             <NoSSR><ul className={styles.cards}>
                 {projects.map(async (project, index) => {
                     const data: any = await getProjectData(project.params.id);
-                    const previewHTML: String = truncate(data.rawHTML, 210, {ellipsis: '...'});
+                    const previewHTML: String = truncate(data.rawHTML, 310, {ellipsis: '...'});
                     return (
                         <Link href={`/projects/${project.params.id}`} className={styles.card} key={index}>
                             <h2>{data.title}</h2>
