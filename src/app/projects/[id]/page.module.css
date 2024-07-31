@@ -87,3 +87,18 @@
 .content li {
   margin: 20px 0px;
 }
+
+.content video {
+  margin: 10px 0px;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.content code {
+  font-size: 1rem;
+}
+
+.content pre {
+  margin: 20px 0px;
+  border-radius: 10px;
+}

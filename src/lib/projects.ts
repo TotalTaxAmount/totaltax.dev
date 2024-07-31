@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import rehypeDocument from "rehype-document";
 import rehypeFormat from "rehype-format";
+import rehypePrism from "rehype-prism-plus";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import remarkHtml from "remark-html";
@@ -37,6 +38,7 @@ export async function getProjectData(id: string) {
         .use(rehypeDocument)
         .use(rehypeFormat)
         .use(rehypeStringify)
+        .use(rehypePrism)
         .process(matterRes.content);
     const rawHTML = remarkRes.toString();
     return {
