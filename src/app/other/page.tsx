@@ -1,3 +1,3 @@
 export default async function Other() {
-  return <h1>This is not done</h1>
+  return <h1>WIP</h1>
 }

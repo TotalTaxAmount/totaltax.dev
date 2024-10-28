@@ -29,11 +29,34 @@ All of these are running on the Poweredge as individual VMs. I do also have a co
 
 - **DDNS-update**: I don't have a static ip address, and I don't want to manually change the IP my domain points to every time it changes. So I setup a script to check if my IP has changed every 5 minutes, and update the IP my domain points to if it has.
 
-- **Grafana**: I still have to fully set this up, but Grafana is a way to monitor the performance of all of my machines.
+- **Grafana**: A monitoring software so I can see lots of info about my server
 
 There are also 2 other computers in the same room as the Poweredge:
 - **NAS server**: The parts of my old pc I ended up repurposing as a TrueNAS NAS server. With a RAID5 and 4TB of storage. Unfortunately 1 of my 2TB Seagate drives died super early before I set anything up. I am in the process of getting a replacement from Seagate.
 
-- **Raspberry Pi**: I also have a Raspberry Pi (Different one than the first one) that I was originally going to use with free screen I got be able to view the server performance with grafana and to be able to debug stuff in the room without my laptop. Sadly due to an issue with either the screen or pi (I think pi) if I use a desktop environment it starts artifacting like crazy. So the PI currently doesn't do anything and the screen is just displaying the output of `top` on the server. This is on my list of things to fix.
 
 ![Image of screen](/projects/images/server/screen.jpg)*The backside of the screen I have, I had to by a control board off of ebay to use it and its a bit janky*
+
+
+Oct 2024
+-
+I have sense added my old laptop to a ProxMox cluster and changed a couple of things around.
+I replaced Dashy with **Homepage** which is another dashboard software that I found to be better for my needs. I also setup a media system:
+- **Jellyfin** is a media server, I have it running on my laptop with GPU passthrough so that Jellyfin can use my laptops GPU to transcode video files.
+- **Radarr** searches though torrent indexes to find the movie that is requested, sends it to the download client, then finally when the download it completed moves it somewhere where Jellyfin can see the movive.
+- **Sonarr** is the same thing as Radarr just for TV shows instead of movies.
+- **Jackett** Radarr and Sonarr both search indexers for movies and tv. But they need a way to communicate with the indexers. This is where Jackett comes in, it sits in between Randarr and Sonarr and all the indexers to provide way for Radarr and Sonarr to use one API and Jackett then requests everything from the diffrent indexer APIs
+- **qBitTorrent** is a BitTorrent client that actually downloads the movies that Radarr and Sonarr find.
+- **Jellyseer** oversees everything and provides a easy UI to search for movies and TV in one place, and provide a link the there media on Jellyfin.
+
+All of the files are stored on my NAS server and all the relevant services have access to the media share
+```
+/main/media
+   |
+   |- shows                    (Jellyfin, Sonarr)
+   |- movies                   (Jellyfin, Radarr)
+   |- downloads                (qBitTorrent, Radarr, Sonarr)
+   |   |- completed            (Hardlinks to shows and movies to save space)
+   |   └─ downloading
+   └─ deleted                  (Sonarr, Radarr)
+```
