@@ -27,7 +27,7 @@ export default function ParticleBg(props: any) {
                     }
                 },
                 "color": {
-                    "value": "#fff"
+                    "value": "#ffffff"
                 },
                 "opacity": {
                     "value": 1,
@@ -35,12 +35,12 @@ export default function ParticleBg(props: any) {
                     "anim": {
                         "enable": false,
                         "speed": 1,
-                        "opacity_min": 0.1,
+                        "opacity_min": 1,
                         "sync": false
                     }
                 },
                 "size": {
-                    "value": 3,
+                    "value": 4,
                     "random": false,
                     "anim": {
                         "enable": false,
